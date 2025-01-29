@@ -1,19 +1,10 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from fastapi_game import crud, models
-from fastapi_game.database import init_db, engine, database
-# from . import crud, models
+from fastapi_game.database import init_db, engine, get_db  # Corrigido para 'get_db' no lugar de 'database'
 from . import schemas  # Importações relativas
-# from .database import init_db, database
 
 app = FastAPI()
-
-def get_db():
-    db = database.SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 @app.post("/characters/", response_model=schemas.Character)
 def create_character(character: schemas.CharacterCreate, db: Session = Depends(get_db)):
@@ -31,4 +22,4 @@ def get_character(character_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Character not found")
     return db_character
 
-# init_db()
+init_db()  # Inicialize o banco de dados (criação das tabelas)

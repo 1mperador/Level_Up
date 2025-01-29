@@ -1,0 +1,1 @@
+Iniciar: uvicorn fastapi_game.main:app --reload

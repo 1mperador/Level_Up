@@ -1,6 +1,5 @@
 # Level Up - API FastAPI
-
-Este projeto é uma API desenvolvida com **FastAPI** para gerenciar personagens em um jogo. A API permite a criação, listagem e consulta de personagens no banco de dados.
+Inspirado em um anime que se chama **Solo leveling**, aonde o personagem principal tem que seguir um sistema de treinamento, com isso criei esse sistema de rotina, que te força a fazer as coisas "semelhante" ao do anime. Assim que você der acesso a ele sobre seu dispositivo, e de suas metas, ele cria desafios no dia para que você os alcance.
 
 ## Tecnologias Utilizadas
 - **Python 3.12**
